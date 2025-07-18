@@ -17,7 +17,7 @@ app.get('/api/disaster', async (req, res) => {
             CONTINENTS.map(async (continent) => {
                 const allPagesData = [];
                 let page = 1;
-                const limit = 100; // set high limit to reduce number of calls per continent
+                const limit = 50; // set high limit to reduce number of calls per continent
 
                 while (true) {
                     const response = await fetch(
@@ -56,7 +56,7 @@ app.get('/api/disaster', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
-
+;
 
 app.listen(PORT, () => {
     console.log(`🚀 Server listening on http://localhost:${PORT}`);
